@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservasi Wisata Malioboro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px 0;
+    }
+    fieldset {
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d35400;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Form Reservasi Wisata Malioboro</h2>
+
+<form action="#" method="post" enctype="multipart/form-data">
+
+  <!-- Hidden ID -->
+  <input type="hidden" name="id_partner" value="MALIOBORO2026">
+
+  <!-- PIN -->
+  <label>PIN Akses Tiket (6 Digit)</label>
+  <input type="password" name="pin" minlength="6" maxlength="6" required>
+
+  <!-- Lokasi Penjemputan -->
+  <label>Lokasi Penjemputan</label>
+  <select name="lokasi" required>
+    <option value="">-- Pilih Lokasi --</option>
+    <option>DIY - Yogyakarta - Stasiun Tugu</option>
+    <option>DIY - Yogyakarta - Bandara YIA</option>
+    <option>Jawa Tengah - Solo - Stasiun Balapan</option>
+  </select>
+
+  <fieldset>
+    <legend>Detail Keberangkatan</legend>
+
+    <label>Cari Paket Wisata</label>
+    <input type="search" name="paket" placeholder="Contoh: Malioboro Night Tour" required>
+
+    <label>Tanggal Keberangkatan</label>
+    <input type="date" name="tanggal" required>
+
+    <label>Jam Kumpul</label>
+    <input type="time" name="jam" required>
+
+    <label>Jumlah Peserta (1-20)</label>
+    <input type="number" name="pax" min="1" max="20" required>
+  </fieldset>
+
+  <fieldset>
+    <legend>Preferensi Personal</legend>
+
+    <label>Link Media Sosial</label>
+    <input type="url" name="medsos" placeholder="https://instagram.com/username">
+
+    <label>Warna Seragam Grup</label>
+    <input type="color" name="warna">
+  </fieldset>
+
+  <fieldset>
+    <legend>Opsi Tambahan</legend>
+
+    <label>Metode Pembayaran</label>
+    <input type="radio" name="pembayaran" value="full" required> Full Payment
+    <input type="radio" name="pembayaran" value="dp"> DP 50%
+    <br><br>
+
+    <label>Fasilitas Ekstra</label>
+    <input type="checkbox" name="fasilitas[]" value="asuransi"> Asuransi Perjalanan
+    <input type="checkbox" name="fasilitas[]" value="kamera"> Sewa Kamera
+    <input type="checkbox" name="fasilitas[]" value="makan"> Makan Malam Romantis
+    <br><br>
+
+    <label>Upload KTP / Paspor</label>
+    <input type="file" name="identitas" accept=".jpg,.png,.pdf" required>
+  </fieldset>
+
+  <button type="submit">Kirim Reservasi</button>
+
+</form>
+
+</body>
+</html>
